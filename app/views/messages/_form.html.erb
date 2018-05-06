@@ -9,8 +9,11 @@
     </div>
   <% end %>
 
-  <%= f.label :content, 'メッセージ' %>
-  <%= f.text_field :content %>
+  <p><%= f.label :title, 'タイトル' %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label :content, 'メッセージ' %></p>
+  <p><%= f.text_field :content %></p>
 
   <%= f.submit '投稿' %>
 <% end %>
