@@ -1,6 +1,10 @@
+<div class="row">
+<div class="col-xs-6">
+
+
 <%= form_for(message) do |f| %>
   <% if message.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-warning"  id="error_explanation">
       <ul>
         <% message.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -9,11 +13,18 @@
     </div>
   <% end %>
 
-  <p><%= f.label :title, 'タイトル' %></p>
-  <p><%= f.text_field :title %></p>
+  <div class="form-group">
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title,class:"form-control" %>
+  </div>
 
-  <p><%= f.label :content, 'メッセージ' %></p>
-  <p><%= f.text_field :content %></p>
-
-  <%= f.submit '投稿' %>
+  <div class="form-group">
+    <%= f.label :content, 'メッセージ' %>
+    <%= f.text_field :content,class:"form-control"  %>
+  </div>
+  
+  <%= f.submit '投稿',class:"btn btn-primary" %>
 <% end %>
+
+</div>
+</div>

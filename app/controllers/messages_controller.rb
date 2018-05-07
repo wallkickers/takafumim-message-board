@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     #他のファイルでも使用する場合は、「@」のインスタンス変数を使用する 
-    @messages = Message.all
+    @messages = Message.order(created_at: :desc).all.page(params[:page]).per(10)
   end
 
   def show
